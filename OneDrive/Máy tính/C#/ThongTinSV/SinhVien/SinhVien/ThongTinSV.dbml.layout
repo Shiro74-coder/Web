@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="ThongTinSV">
+  <DataContextMoniker Name="/ThongTinSVDataContext" />
+  <nestedChildShapes>
+    <classShape Id="32786c35-3a43-4318-ad40-adc1aecb67be" absoluteBounds="2, 3.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/ThongTinSVDataContext/Thong_Tin_Khoa_Hoc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1ea4356-9661-48a1-82a9-593948bd9799" absoluteBounds="2.015, 3.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de6fda00-a9b1-44de-a05f-4ddee6efaca8" absoluteBounds="1, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/ThongTinSVDataContext/Thong_Tin_Lien_Lac" />
+      <nestedChildShapes>
+        <elementListCompartment Id="48fddb1e-5c6a-4590-9189-cbb1208abfb8" absoluteBounds="1.0150000000000001, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4bed5ed7-13f0-4f57-8c48-2a8dc3d377dc" absoluteBounds="1.5, 6, 2, 2.5401025390625">
+      <DataClassMoniker Name="/ThongTinSVDataContext/Thong_Tin_Nguoi_LH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a01bae6-fb6b-4f49-9807-405c83259081" absoluteBounds="1.5150000000000001, 6.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="81c5bf75-2dd8-445f-b2b7-d916fa12bf1e" absoluteBounds="7.75, 5.125, 2, 2.5401025390625">
+      <DataClassMoniker Name="/ThongTinSVDataContext/Thong_Tin_Sinh_Vien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abaeeb22-9fcb-404a-a234-a2ab3a161d17" absoluteBounds="7.765, 5.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 5.36140055338542); (4 : 5.36140055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ThongTinSVDataContext/Thong_Tin_Sinh_Vien/Thong_Tin_Sinh_Vien_Thong_Tin_Khoa_Hoc" />
+      <nodes>
+        <classShapeMoniker Id="81c5bf75-2dd8-445f-b2b7-d916fa12bf1e" />
+        <classShapeMoniker Id="32786c35-3a43-4318-ad40-adc1aecb67be" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 5.125); (8.75 : 1.92390055338542); (3 : 1.92390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ThongTinSVDataContext/Thong_Tin_Sinh_Vien/Thong_Tin_Sinh_Vien_Thong_Tin_Lien_Lac" />
+      <nodes>
+        <classShapeMoniker Id="81c5bf75-2dd8-445f-b2b7-d916fa12bf1e" />
+        <classShapeMoniker Id="de6fda00-a9b1-44de-a05f-4ddee6efaca8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.75 : 6.83255126953125); (3.5 : 6.83255126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ThongTinSVDataContext/Thong_Tin_Sinh_Vien/Thong_Tin_Sinh_Vien_Thong_Tin_Nguoi_LH" />
+      <nodes>
+        <classShapeMoniker Id="81c5bf75-2dd8-445f-b2b7-d916fa12bf1e" />
+        <classShapeMoniker Id="4bed5ed7-13f0-4f57-8c48-2a8dc3d377dc" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

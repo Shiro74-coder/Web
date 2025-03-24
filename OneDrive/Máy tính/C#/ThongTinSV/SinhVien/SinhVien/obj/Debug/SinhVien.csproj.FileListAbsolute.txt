@@ -1,0 +1,15 @@
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\bin\Debug\SinhVien.exe.config
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\bin\Debug\SinhVien.exe
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\bin\Debug\SinhVien.pdb
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\obj\Debug\SinhVien.csproj.AssemblyReference.cache
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\obj\Debug\SinhVien.Properties.Resources.resources
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\obj\Debug\SinhVien.csproj.GenerateResource.cache
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\obj\Debug\SinhVien.csproj.CoreCompileInputs.cache
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\obj\Debug\SinhVien.exe
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\obj\Debug\SinhVien.pdb
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\obj\Debug\SinhVien.fThongTinSV.resources
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\bin\Debug\GUI\fDangNhap.resx
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\obj\Debug\QuanLySinhVien.fDangNhap.resources
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\obj\Debug\SinhVien.fCapNhatThongTinSV.resources
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\bin\Debug\Guna.UI2.dll
+C:\Users\ducdu\OneDrive\Máy tính\C#\ThongTinSV\SinhVien\SinhVien\obj\Debug\SinhVien.csproj.Up2Date

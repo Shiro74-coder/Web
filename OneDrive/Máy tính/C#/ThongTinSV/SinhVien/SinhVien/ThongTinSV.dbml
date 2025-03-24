@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLySinhVien" Class="ThongTinSVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=QuanLySinhVien;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="SinhVien.Properties.Settings" SettingsPropertyName="QuanLySinhVienConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Thong_Tin_Khoa_Hoc" Member="Thong_Tin_Khoa_Hocs">
+    <Type Name="Thong_Tin_Khoa_Hoc">
+      <Column Name="MaSV" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KhoaHoc" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayNhapHoc" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiHinhDaoTao" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ChuongTrinhDaoTao" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Khoa" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Nganh" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NienKhoa" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Thong_Tin_Sinh_Vien_Thong_Tin_Khoa_Hoc" Member="Thong_Tin_Sinh_Vien" ThisKey="MaSV" OtherKey="MaSV" Type="Thong_Tin_Sinh_Vien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Thong_Tin_Lien_Lac" Member="Thong_Tin_Lien_Lacs">
+    <Type Name="Thong_Tin_Lien_Lac">
+      <Column Name="MaSV" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="QuocGia" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="TinhThanh" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="QuanHuyen" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Phuong" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="DiDong" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Association Name="Thong_Tin_Sinh_Vien_Thong_Tin_Lien_Lac" Member="Thong_Tin_Sinh_Vien" ThisKey="MaSV" OtherKey="MaSV" Type="Thong_Tin_Sinh_Vien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Thong_Tin_Nguoi_LH" Member="Thong_Tin_Nguoi_LHs">
+    <Type Name="Thong_Tin_Nguoi_LH">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaSV" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTenLienHe" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DiaChiLienHe" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DienThoaiLienHe" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="HoTenCha" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DienThoaiCha" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="HoTenMe" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DienThoaiMe" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Association Name="Thong_Tin_Sinh_Vien_Thong_Tin_Nguoi_LH" Member="Thong_Tin_Sinh_Vien" ThisKey="MaSV" OtherKey="MaSV" Type="Thong_Tin_Sinh_Vien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Thong_Tin_Sinh_Vien" Member="Thong_Tin_Sinh_Viens">
+    <Type Name="Thong_Tin_Sinh_Vien">
+      <Column Name="MaSV" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NoiSinh" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CCCD" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DanToc" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="LopSV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Thong_Tin_Sinh_Vien_Thong_Tin_Khoa_Hoc" Member="Thong_Tin_Khoa_Hoc" ThisKey="MaSV" OtherKey="MaSV" Type="Thong_Tin_Khoa_Hoc" Cardinality="One" />
+      <Association Name="Thong_Tin_Sinh_Vien_Thong_Tin_Lien_Lac" Member="Thong_Tin_Lien_Lac" ThisKey="MaSV" OtherKey="MaSV" Type="Thong_Tin_Lien_Lac" Cardinality="One" />
+      <Association Name="Thong_Tin_Sinh_Vien_Thong_Tin_Nguoi_LH" Member="Thong_Tin_Nguoi_LHs" ThisKey="MaSV" OtherKey="MaSV" Type="Thong_Tin_Nguoi_LH" />
+    </Type>
+  </Table>
+</Database>
