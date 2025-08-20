@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+</head>
+<body>
+	<h2>Trang đăng nhập theo cookie</h2>
+	<form action="Login" method="post">
+		Name: <input type="text" name="username"><br /> Pass: <input
+			type="password" name="password"><br /> <input type="submit"
+			value="Đăng nhập">
+	</form>
+
+	<p id="error" style="color: red;"></p>
+
+	<script>
+		const params = new URLSearchParams(window.location.search);
+		if (params.get("error") === "1") {
+			document.getElementById("error").textContent = "Sai username hoặc password!";
+		}
+	</script>
+</body>
+</html>
