@@ -27,8 +27,6 @@ src/
      └─ webapp/
          ├─ META-INF/
          ├─ WEB-INF/
-         │    └─ web.xml    (nếu cần, còn lại dùng @WebServlet)
-         │
          ├─ home.jsp                (trang chính sau đăng nhập)
          ├─ login.jsp               (trang đăng nhập)
          ├─ register.jsp            (form đăng ký)
@@ -37,3 +35,4 @@ src/
          ├─ reset_password.jsp       (form nhập mật khẩu mới)
          ├─ category_list.jsp        (danh sách category)
          └─ category_form.jsp        (form thêm/sửa category)
+
