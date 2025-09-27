@@ -1,3 +1,8 @@
+Do file assets quá lớn nên em không bỏ vào project được, mong thầy thông cảm ạ
+
+
+https://github.com/Shiro74-coder/Web/blob/main/10_09.gif
+
 ├── src
 │   └── main
 │       └── java
@@ -67,4 +72,5 @@
         │   ├── manager.jsp
         │   └── web.jsp
         ├── sitemesh3.xml
+
         └── web.xml
