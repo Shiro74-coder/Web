@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+    <mapping path="/WEB-INF/decorators/*" exclude="true"/>
+    <mapping path="/commons/*" exclude="true"/>
+    <mapping path="/assets/*" exclude="true"/>
+    <mapping path="/css/*" exclude="true"/>
+    <mapping path="/js/*" exclude="true"/>
+    <mapping path="/images/*" exclude="true"/>
+
+    <mapping path="/login" exclude="true"/>
+    <mapping path="/register" exclude="true"/>
+    <mapping path="/forgot" exclude="true"/>
+    <mapping path="/reset" exclude="true"/>
+    <mapping path="/waiting" exclude="true"/>
+    <mapping path="/logout" exclude="true"/>
+
+    <mapping path="/admin/*"   decorator="/admin.jsp"></mapping>
+    <mapping path="/manager/*" decorator="/manager.jsp"/>
+    <mapping path="/*"         decorator="/web.jsp"/>
+    <mapping path="/user/*"    decorator="/user.jsp"/>
+    <mapping path="/v1/api/*"  name="api" exclude="true"/>
+</sitemesh>
