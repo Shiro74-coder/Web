@@ -1,6 +1,6 @@
 Do file assets quá lớn nên em không bỏ vào project được, mong thầy thông cảm ạ
 
-
+                    Đây là link video bài làm ạ!
 https://github.com/Shiro74-coder/Web/blob/main/10_09.gif
 
 ├── src
@@ -74,3 +74,4 @@ https://github.com/Shiro74-coder/Web/blob/main/10_09.gif
         ├── sitemesh3.xml
 
         └── web.xml
+
