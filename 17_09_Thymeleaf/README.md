@@ -2,7 +2,8 @@
 
 ![17_09](https://github.com/Shiro74-coder/Web/blob/main/17_09.gif)
 
-Do em để file md nên cấu trúc thư mục nó hiển thị lỗi định dạng ạ
+Do em để file md nên cấu trúc thư mục nó hiển thị lỗi định dạng ạ, thầy chuyển qua xem bằng code ạ
+
 ├── src
 │   ├── main
 │   │   ├── java
@@ -28,3 +29,4 @@ Do em để file md nên cấu trúc thư mục nó hiển thị lỗi định d
 │               └── iostar
 │                   └── ApplicationTests.java
 └── pom.xml
+
