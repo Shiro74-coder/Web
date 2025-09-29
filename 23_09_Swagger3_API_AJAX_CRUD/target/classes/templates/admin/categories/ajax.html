@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+</div>
+<div class="modal-footer">
+<button class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+<button id="btnUpdate" class="btn btn-primary">Cập nhật</button>
+</div>
+</div></div>
+</div>
+
+
+</section>
+
+
+<script th:inline="javascript">
+const API = /*[[@{/api/categories}]]*/ '/api/categories';
+const IMG = /*[[@{/uploads/}]]*/ '/uploads/';
+
+
+function load(name=''){
+$.getJSON(API, {name: name}, function(resp){
+const tbody = $('#tblCats tbody');
+tbody.empty();
+const page = resp.body; // Page<Category>
+$.each(page.content, function(_, c){
+const iconHtml = c.icon ? `<img src="${IMG}${c.icon}" style="width:60px">` : '';
+tbody.append(`<tr>
+<td>${c.categoryId}</td>
+<td>${c.name}</td>
+<td>${iconHtml}</td>
+<td>
+<button class="btn btn-sm btn-warning" onclick="openUpdate(${c.categoryId})">Sửa</button>
+<button class="btn btn-sm btn-danger" onclick="delCat(${c.categoryId})">Xóa</button>
+</td>
+</tr>`);
+});
+});
+}
+
+
+function openUpdate(id){
+$.getJSON(`${API}/${id}`, function(resp){
+const c = resp.body;
+const f = $('#frmUpdate')[0];
+f.id.value = c.categoryId; f.name.value = c.name;
+const modal = new bootstrap.Modal(document.getElementById('updateModal'));
+modal.show();
+})
+}
+
+
+function delCat(id){
+if(!confirm('Xóa category?')) return;
+$.ajax({ url: `${API}/${id}`, type: 'DELETE', success: function(){ load($('#searchName').val()); }});
+}
+
+
+$('#btnSearch').on('click', ()=> load($('#searchName').val()));
+$('#btnCreate').on('click', ()=>{
+const form = document.getElementById('frmCreate');
+const fd = new FormData(form);
+$.ajax({ url: `${API}/upload`, type: 'POST', data: fd, processData:false, contentType:false,
+success: function(){ form.reset(); $('.modal').modal('hide'); load(); }
+});
+});
+$('#btnUpdate').on('click', ()=>{
+const form = document.getElementById('frmUpdate');
+const id = form.id.value;
+const fd = new FormData(form);
+$.ajax({ url: `${API}/${id}/upload`, type: 'PUT', data: fd, processData:false, contentType:false,
+success: function(){ form.reset(); $('.modal').modal('hide'); load($('#searchName').val()); }
+});
+});
+
+
+// init
+$(function(){ load(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<div class="col-md-3"><label class="form-label">Giá</label><input name="unitPrice" type="number" step="0.01" class="form-control" required></div>
+<div class="col-md-3"><label class="form-label">SL</label><input name="quantity" type="number" class="form-control" required></div>
+<div class="col-md-12"><label class="form-label">Danh mục</label>
+<select name="categoryId" id="cateSelectUp" class="form-select"></select>
+</div>
+<div class="col-md-12"><label class="form-label">Mô tả</label><textarea name="description" class="form-control"></textarea></div>
+<div class="col-md-6"><label class="form-label">Discount</label><input name="discount" type="number" step="0.01" class="form-control" value="0"></div>
+<div class="col-md-6"><label class="form-label">Ảnh (tùy chọn)</label><input name="image" type="file" class="form-control"></div>
+</div>
+</form>
+</div>
+<div class="modal-footer">
+<button class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+<button id="btnUpdate" class="btn btn-primary">Cập nhật</button>
+</div>
+</div></div>
+</div>
+
+
+</section>
+
+
+<script th:inline="javascript">
+const API = /*[[@{/api/products}]]*/ '/api/products';
+const CAT_API = /*[[@{/api/categories}]]*/ '/api/categories';
+const IMG = /*[[@{/uploads/}]]*/ '/uploads/';
+
+
+function loadCategories(select){
+$.getJSON(CAT_API, function(resp){
+const list = resp.body.content || resp.body; // tùy Page hay List
+select.empty();
+$.each(list, function(_, c){ select.append(`<option value="${c.categoryId}">${c.name}</option>`); });
+});
+}
+
+
+function load(name=''){
+$.getJSON(API, {name: name}, function(resp){
+const tbody = $('#tblProds tbody');
+tbody.empty();
+const page = resp.body; // Page<Product>
+$.each(page.content, function(_, p){
+const img = p.images ? `<img src="${IMG}${p.images}" style="width:60px">` : '';
+tbody.append(`<tr>
+<td>${p.productId}</td>
+<td>${p.name}</td>
+<td>${p.unitPrice}</td>
+<td>${p.quantity}</td>
+<td>${p.category ? p.category.name : ''}</td>
+<td>${img}</td>
+<td>
+<button class="btn btn-sm btn-warning" onclick="openUpdate(${p.productId})">Sửa</button>
+<button class="btn btn-sm btn-danger" onclick="delProd(${p.productId})">Xóa</button>
+</td>
+</tr>`);
+});
+});
+}
+
+
+function openUpdate(id){
+$.getJSON(`${API}/${id}`, function(resp){
+const p = resp.body; const f = $('#frmUpdate')[0];
+f.id.value = p.productId; f.name.value = p.name; f.unitPrice.value = p.unitPrice;
+f.quantity.value = p.quantity; f.description.value = p.description || '';
+f.discount.value = p.discount || 0;
+loadCategories($('#cateSelectUp'));
+setTimeout(()=> { $('#cateSelectUp').val(p.category ? p.category.categoryId : ''); }, 200);
+const modal = new bootstrap.Modal(document.getElementById('updateModal'));
+modal.show();
+});
+}
+
+
+function delProd(id){
+if(!confirm('Xóa product?')) return;
+$.ajax({ url: `${API}/${id}`, type: 'DELETE', success: function(){ load($('#searchName').val()); }});
+}
+
+
+$('#btnSearch').on('click', ()=> load($('#searchName').val()));
+$('#createModal').on('show.bs.modal', ()=> loadCategories($('#cateSelect')));
+
+
+$('#btnCreate').on('click', ()=>{
+const form = document.getElementById('frmCreate');
+const fd = new FormData(form);
+$.ajax({ url: API, type: 'POST', data: fd, processData:false, contentType:false,
+success: function(){ form.reset(); $('.modal').modal('hide'); load(); }
+});
+});
+$('#btnUpdate').on('click', ()=>{
+const form = document.getElementById('frmUpdate');
+const id = form.id.value; const fd = new FormData(form);
+$.ajax({ url: `${API}/${id}`, type: 'PUT', data: fd, processData:false, contentType:false,
+success: function(){ form.reset(); $('.modal').modal('hide'); load($('#searchName').val()); }
+});
+});
+
+
+$(function(){ load(); });
+</script>
+</body>
+</html>
